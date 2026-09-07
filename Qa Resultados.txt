@@ -1,0 +1,9 @@
+[FALLA] TC-DP-01 - displayPhoto con imagen valida (SmartTV) -> excepcion no controlada propagada: HeadlessException (el metodo intenta abrir una ventana Swing/JFrame; falla en cualquier entorno sin interfaz grafica y no tiene manejo para ese caso)
+[FALLA] TC-DP-02 - displayPhoto con imagen valida (Proyector) -> excepcion no controlada propagada: HeadlessException (mismo problema que SmartTV: dependencia dura de una interfaz grafica)
+[FALLA] TC-DP-03 - displayPhoto con archivo inexistente -> manejo controlado esperado -> se imprime traza de pila cruda (e.printStackTrace) en vez de un mensaje controlado
+[FALLA] TC-DP-04 - displayPhoto con ruta null -> se espera validacion, no excepcion sin capturar -> NullPointerException no controlada
+[FALLA] TC-VOL-01 - adjustVolume(50) debe fijar el volumen exactamente en 50 (20 repeticiones) -> 0/20 coincidieron con 50 -> el valor pedido se ignora y se sustituye por un numero aleatorio (prueba no determinista por causa del defecto)
+[FALLA] TC-VOL-02 - adjustVolume(-10) valor invalido debe ser rechazado o normalizado -> salida real: Volumen cambiado a 26 (no existe validacion de rango; ademas el valor es aleatorio por el defecto de TC-VOL-01)
+[FALLA] TC-VOL-03 - adjustVolume(150) valor invalido debe ser rechazado o normalizado a 100 -> salida real: Volumen cambiado a 86 (no existe validacion de rango superior)
+[FALLA] TC-SIZE-01 - setDisplaySize con distintos parametros debe producir resultados distintos -> salida identica para (1920x1080) y (640x480): 'Tama?o de pantalla ajustado autom?ticamente' -> el metodo ignora width y height por completo
+[FALLA] TC-SIZE-02 - setDisplaySize(0,0) valores invalidos deben ser rechazados -> salida real: 'Tama?o de pantalla ajustado autom?ticamente' (se acepta y procesa igual que cualquier otro valor; no hay validacion)
