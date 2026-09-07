@@ -7,3 +7,4 @@
 [FALLA] TC-VOL-03 - adjustVolume(150) valor invalido debe ser rechazado o normalizado a 100 -> salida real: Volumen cambiado a 86 (no existe validacion de rango superior)
 [FALLA] TC-SIZE-01 - setDisplaySize con distintos parametros debe producir resultados distintos -> salida identica para (1920x1080) y (640x480): 'Tama?o de pantalla ajustado autom?ticamente' -> el metodo ignora width y height por completo
 [FALLA] TC-SIZE-02 - setDisplaySize(0,0) valores invalidos deben ser rechazados -> salida real: 'Tama?o de pantalla ajustado autom?ticamente' (se acepta y procesa igual que cualquier otro valor; no hay validacion)
+Cambios para provocar un push
